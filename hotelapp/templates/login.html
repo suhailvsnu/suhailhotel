@@ -70,7 +70,7 @@
     <!-- ===============================================-->
     <main class="main" id="top">
       <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" data-navbar-on-scroll="data-navbar-on-scroll">
-        <div class="container"><a class="navbar-brand d-inline-flex" href="index.html"><img class="d-inline-block" src="{% static 'assets/img/gallery/logo.svg' %}" alt="logo" /><span class="text-1000 fs-3 fw-bold ms-2 text-gradient">foodwaGon</span></a>
+        <div class="container"><a class="navbar-brand d-inline-flex" href="/"><img class="d-inline-block" src="{% static 'assets/img/gallery/logo.svg' %}" alt="logo" /><span class="text-1000 fs-3 fw-bold ms-2 text-gradient">foodwaGon</span></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"> </span></button>
           <div class="collapse navbar-collapse border-top border-lg-0 my-2 mt-lg-0" id="navbarSupportedContent">
             <div class="mx-auto pt-5 pt-lg-0 d-block d-lg-none d-xl-block">
@@ -84,7 +84,15 @@
             </form>
         </form>
     </div>
-  </div><br> <br>
+  </div>
+    <!-- <div style=" margin-left: 50px;"> -->
+      <a class=" text-warning" href="/"style="padding: 15px;" > Home</a>
+      <a class="text-warning  " style="padding: 15px;" href="/" > About</a>
+      <a class=" text-warning" href="/"style="padding: 15px; margin-right: 500px;" > Resturant</a>
+      <!-- <a class="text-warning  " style="padding: 15px;" href="/" > About</a> -->
+      <!-- <a class="  text-warning" href="/"style="padding: 15px;" > Home</a> -->
+      <!-- <a class="text-warning  " style="padding: 15px; margin-right: 2000px;" href="//" > Login</a> -->
+      
  
 </nav>
 <section class="py-5 overflow-hidden bg-primary" id="home">
@@ -103,12 +111,13 @@
     <div class="col-md-6 col-lg-4">
       <div class="login-wrap p-0">
         <h3 class="mb-4 text-center">Sign In</h3>
-        <form action="#" class="signin-form">
+        <form action="/signup/" class="signin-form" method="post">
+          {% csrf_token %}
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Username" required>
+            <input type="text" class="form-control" placeholder="Username" name="username" required>
           </div><br>
           <div class="form-group">
-            <input type="password" class="form-control" placeholder="Password" required>
+            <input type="password" class="form-control" placeholder="Password" name="password" required>
           </div><br><br>
           <div  style="text-align:center">
             <button type="submit" value="button">Sign In</button>
