@@ -7,8 +7,8 @@ from django.core.files.storage import FileSystemStorage
 from hotelapp.models import tbl_user
 # Create your views here.
 def index(request):
-    return render(request,'index.html')
-    # return render(request,'adminpg.html')
+    # return render(request,'index.html')
+    return render(request,'demo.html')
     # return render(request,'userhomepage.html')
     # return render(request,'hotelpage.html')
 
