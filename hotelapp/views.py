@@ -44,12 +44,9 @@ def userinput(request):
 def signup(request):
     username=request.POST.get('username')
     password=request.POST.get('password')
-    print(username,password)
     data=authenticate(username=username,password=password)
-    print(data,data.is_superuser)
     request.session['username']=username
     if data is not None and data.is_superuser==1:
-            
             return redirect('/admin1/') 
     elif data is not None and data.is_superuser == 0:
        return redirect('/user1/')
