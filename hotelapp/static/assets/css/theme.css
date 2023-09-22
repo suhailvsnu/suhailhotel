@@ -18150,11 +18150,11 @@ ul {
   margin-bottom: -8rem;
   -webkit-transition: -webkit-transform 0.4s ease;
   transition: -webkit-transform 0.4s ease;
-  -o-transition: transform 0.4s ease;
-  transition: transform 0.4s ease;
-  transition: transform 0.4s ease, -webkit-transform 0.4s ease;
-  position: relative;
-  display: block;
+  -o-transition: transform 0.4s ease; */
+  /* /* transition: transform 0.4s ease;
+  transition: transform 0.4s ease, -webkit-transform 0.4s ease; */
+  /* position: relative; */
+  /* display: block; */
 }
 
 @media (min-width: 1540px) {

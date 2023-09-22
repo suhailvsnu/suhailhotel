@@ -4,11 +4,11 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 from django.http import HttpResponse
 from django.core.files.storage import FileSystemStorage
-from hotelapp.models import tbl_user
+from hotelapp.models import tbl_user,tbl_resturant
 # Create your views here.
 def index(request):
-    # return render(request,'index.html')
-    return render(request,'demo.html')
+    return render(request,'index.html')
+    # return render(request,'demo.html')
     # return render(request,'userhomepage.html')
     # return render(request,'hotelpage.html')
 
@@ -24,6 +24,7 @@ def userinput(request):
 
     d.username=request.POST.get('username') 
     d.firstname=request.POST.get('firstname')
+    d.lastname=request.POST.get('lastname')
     d.email=request.POST.get('email')
     d.gender=request.POST.get('gender') 
     d.phone=request.POST.get('phone')
@@ -40,7 +41,7 @@ def userinput(request):
     c.set_password(password)
     c.save()
     d.save()
-    return redirect('/')
+    return redirect('/login/')
 def signup(request):
     username=request.POST.get('username')
     password=request.POST.get('password')
@@ -63,3 +64,41 @@ def admin1(request):
     a=request.session['username']
 
     return render(request,'adminpage.html') 
+def addhotel(request):
+    return render(request,'addhotel.html')
+def hotelinput(request):
+    c=User()
+    d=tbl_resturant()
+    d.username=request.POST.get('username')
+    d.firstname=request.POST.get('firstname')
+    d.lastname=request.POST.get('lastname')
+    d.resturantname=request.POST.get('rname')
+    d.location=request.POST.get('location')
+    d.authorizedperson=request.POST.get('atperson')
+    d.phone=request.POST.get('phone')
+    d.type=request.POST.get('type')
+    d.email=request.POST.get('email')
+    d.staff=request.POST.get('staff')
+    photo=request.FILES['image'] 
+    fs= FileSystemStorage()
+    filename=fs.save(photo.name,photo) 
+    uploaded_file_url=fs.url(filename)
+    d.image=uploaded_file_url
+    password=request.POST.get('password')
+    c.set_password(password)
+    c.username=request.POST.get('username')
+    c.email=request.POST.get('email')
+    d.save()
+    c.save()
+    return redirect('/login/')
+def viewhotel(request):
+     b=tbl_resturant.objects.all()
+     return render(request,'viewhotel.html',{'data':b})
+
+
+
+
+
+
+
+

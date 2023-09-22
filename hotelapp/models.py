@@ -12,9 +12,33 @@ class tbl_user(models.Model):
     userimage=models.CharField(max_length=500)
     image=models.CharField(max_length=500)
     username=models.CharField(max_length=200)
-    status=models.CharField(max_length=200,null=True)
+    status=models.CharField(max_length=200,default=None)
     class Meta:
         db_table="tbl_user"
+
+class tbl_resturant(models.Model):
+     firstname=models.CharField(max_length=200)
+     lastname=models.CharField(max_length=200)
+     username=models.CharField(max_length=200)
+     resturantname=models.CharField(max_length=200)
+     location=models.CharField(max_length=200)
+     authorizedperson=models.CharField(max_length=200)
+     phone=models.IntegerField()
+     type=models.CharField(max_length=200)
+     email=models.CharField(max_length=200)
+     staff=models.IntegerField()
+     image=models.CharField(max_length=200)
+     status=models.CharField(max_length=200,null=True)
+
+     class Meta:
+         db_table="tbl_resturant"
+
+
+
+
+
+
+
 
 
 

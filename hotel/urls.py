@@ -29,6 +29,10 @@ urlpatterns = [
     path('signup/',views.signup),
     path('admin1/',views.admin1),
     path('user1/',views.user1),
+    path('addhotel/',views.addhotel),
+    path('hotelinput/',views.hotelinput),
+    path('viewhotel/',views.viewhotel),
+    
 
     
     
