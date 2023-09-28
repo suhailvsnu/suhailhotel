@@ -32,6 +32,17 @@ urlpatterns = [
     path('addhotel/',views.addhotel),
     path('hotelinput/',views.hotelinput),
     path('viewhotel/',views.viewhotel),
+    path('removehotel/',views.removehotel),
+    path('delhotel/<int:id>',views.delhotel),
+    path('hotelhomepage/',views.hotelhomepage),
+    path('updatehotel/<int:id>',views.updatehotel1),
+    path('updatehotel2/<int:id>',views.updatehotel2),
+    path('userview/',views.viewuser),
+    path('updateuser1/<int:id>',views.updateuser1),
+    path('updateuser2/<int:id>',views.updateuser2),
+    path('addfoodmenu/',views.addfood),
+    path('addfoodmenu/',views.addfoodmenu),
+  
     
 
     

@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    
 
     <!-- ===============================================-->
     <!--    Document Title-->
@@ -30,6 +31,12 @@
     <!--    Stylesheets-->
     <!-- ===============================================-->
     <link href="{% static 'assets/css/theme.css' %}" rel="stylesheet" />
+    .center {
+        margin: auto;
+        width: 50%;
+        border: 3px solid green;
+        padding: 10px;
+      }
 
   </head>
 
@@ -60,7 +67,7 @@
           </div>
         </div>
         <!-- <div style=" margin-left: 50px;"> -->
-        <a class=" text-warning" href="/"style="padding: 15px;" > Home</a>
+        <a class=" text-warning" href="/user1/"style="padding: 15px;" > Home</a>
         <a class="text-warning  " style="padding: 15px;" href="/" > About</a>
         <a class=" text-warning" href="/"style="padding: 15px; margin-right: 500px;" > Resturant</a>
         <!-- <a class="text-warning  " style="padding: 15px;" href="/" > </a> -->
@@ -72,9 +79,9 @@
       </div>
       </nav>
       <!-- <section class="py-5 overflow-hidden bg-primary" id="home"> -->
-        <div class="container">
-          <div class="row flex-center">
-            <div class><a class= href="#!"><img style="margin-right:1200px;" height="500"  width="1100" src="{% static 'assets/img/gallery/admin.jpg' %}" alt="hero-header" /></a></div>
+        <!-- <div class="container"> -->
+          <!-- <div class="row flex-center"> -->
+            <!-- <div class><a class= href="#!"><img style="margin-right:1200px;" height="500"  width="1100" src="{% static 'assets/img/gallery/img2.jpg' %}" alt="hero-header" /></a></div> -->
             <!-- <div class="col-md-7 col-lg-6 py-8 text-md-start text-center"> -->
               <!-- <h1 class="display-1 fs-md-5 fs-lg-6 fs-xl-8 text-light">Are you starving?</h1> -->
               <!-- <h1 class="text-800 mb-5 fs-4">Within a few clicks, find meals that<br class="d-none d-xxl-block" />are accessible near you</h1> -->
@@ -132,18 +139,41 @@
 
 
       <section >
-        <h1 style="text-align: center;">Hello Admin</h1>
-        <div class="p-3 mb-2 bg-light text-dark">
-          <a class="btn btn-secondary" href="/addhotel/"style="padding: 15px; " > Add Resturant</a>
-         
-          
-          <a class="btn btn-secondary" href="/viewhotel/"style="padding: 15px; " > View Resturant</a>
+        <!-- <div class="table-responsive"> -->
+        <h1 style="text-align: center;">Hii {{ data.username }} </h1>
+
+        <div class="card" style="width: 18rem; ">
+            <img class="card-img-top" src="{{ data.image}}" height="150" width="150">
+            <div class="card-body">
+              <h5 class="card-title">FIRST NAME :{{ data.firstname }}</h5>
+              <h5 class="card-title">LAST NAME {{ data.lastname }}</h5>
+
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">EMAIL :{{ data.email }}</li>
+              <li class="list-group-item">PHONE:{{ data.phone }}</li>
+              <li class="list-group-item">ADRESS :{{ data.adress }}</li>
+            </ul>
+            <div class="card-body">
+              <a href="/user1/" class="btn btn-secondary">BACK</a>
+           
+            
+            
+                <!-- <a href="/updateuser/" class="btn-secondary">UPDATE</a> -->
+
+            </div>
+          </div>
+
+
+
+
+
        
-          <a class="btn btn-secondary" href="/updatehotel/{{x.id}}"style="padding: 15px; " > Update Resturant</a>
-
-           <a class="btn btn-danger" href="/removehotel/"style="padding: 15px; " > Remove Resturant</a>
-           </div>
-
+     
+      
+       
+       
+           
 
 
 

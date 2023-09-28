@@ -12,7 +12,7 @@ class tbl_user(models.Model):
     userimage=models.CharField(max_length=500)
     image=models.CharField(max_length=500)
     username=models.CharField(max_length=200)
-    status=models.CharField(max_length=200,default=None)
+    status=models.CharField(max_length=200,default="active")
     class Meta:
         db_table="tbl_user"
 
@@ -33,6 +33,25 @@ class tbl_resturant(models.Model):
      class Meta:
          db_table="tbl_resturant"
 
+class tbl_accounts(models.Model):
+
+
+  username=models.CharField(max_length=200)
+  email=models.CharField(max_length=200)
+  accounttype=models.CharField(max_length=200)
+
+  class Meta:
+        db_table="tbl_accounts"
+class tbl_foodMenu(models.Model):
+    restname=models.CharField(max_length=30)
+    menuname=models.CharField(max_length=30)
+    type=models.CharField(max_length=30)
+    cusine=models.CharField(max_length=30)
+    origin=models.CharField(max_length=30)
+    
+   
+    class Meta:
+        db_table="tbl_foodMenu"         
 
 
 
