@@ -225,6 +225,19 @@ def addfoodmenu(request):
     c.origin=request.POST.get('orgin') 
     c.save()
     return redirect('/hotelhomepage/')
+
+def viewfood(request):
+    c=tbl_foodMenu.objects.all()
+    return render(request,'viewfood.html',{'data':c})
+def viewhotelprofile(request):
+     a = request.session['username']
+     c=tbl_resturant.objects.get (username=a)
+
+     return render(request,'viewrestprofile.html',{'data':c})
+
+
+
+
     
   
 

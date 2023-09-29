@@ -40,8 +40,10 @@ urlpatterns = [
     path('userview/',views.viewuser),
     path('updateuser1/<int:id>',views.updateuser1),
     path('updateuser2/<int:id>',views.updateuser2),
-    path('addfoodmenu/',views.addfood),
+    path('addfood/',views.addfood),
     path('addfoodmenu/',views.addfoodmenu),
+    path('viewfood/',views.viewfood),
+    path('viewhotelprofile/',views.viewhotelprofile),
   
     
 

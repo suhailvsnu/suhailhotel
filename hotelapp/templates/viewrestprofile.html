@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    
 
     <!-- ===============================================-->
     <!--    Document Title-->
@@ -30,6 +31,12 @@
     <!--    Stylesheets-->
     <!-- ===============================================-->
     <link href="{% static 'assets/css/theme.css' %}" rel="stylesheet" />
+    .center {
+        margin: auto;
+        width: 50%;
+        border: 3px solid green;
+        padding: 10px;
+      }
 
   </head>
 
@@ -60,7 +67,7 @@
           </div>
         </div>
         <!-- <div style=" margin-left: 50px;"> -->
-        <a class=" text-warning" href="/admin1/"style="padding: 15px;" > Home</a>
+        <a class=" text-warning" href="/user1/"style="padding: 15px;" > Home</a>
         <a class="text-warning  " style="padding: 15px;" href="/" > About</a>
         <a class=" text-warning" href="/"style="padding: 15px; margin-right: 500px;" > Resturant</a>
         <!-- <a class="text-warning  " style="padding: 15px;" href="/" > </a> -->
@@ -132,31 +139,36 @@
 
 
       <section >
-        <div class="table-responsive">
-        <h1 style="text-align: center;">Resturant list </h1>
-        <table class="table  table-bordered table-striped table-hover table-sm ">
-         
-          <thead class="thead-dark">
-              <th> Resturant name</th>
-              <th> Authorized person</th>
-              <th>Location</th>
-              <th>Image</th>
-             
-          </thead>
-          <tbody>
-            {% for item in data %}
-              <tr>
-                  <td>{{ item.resturantname}}</td>
-                  <td> {{ item.authorizedperson}}</td>
-                  <td>{{ item.location}}</td>
-                  <td><img src="{{ item.image}}" height="150" width="150"></td>
-                 
-                  
-              </tr>
-              {% endfor %}
-          </tbody>
-      </table>
-      </div>
+        <!-- <div class="table-responsive"> -->
+        <h1 style="text-align: center;">Hii {{ data.username }} </h1>
+
+        <div class="card" style="width: 18rem; ">
+            <img class="card-img-top" src="{{ data.image}}" height="150" width="150">
+            <div class="card-body">
+              <h5 class="card-title">FIRST NAME :{{ data.firstname }}</h5>
+              <h5 class="card-title">LAST NAME {{ data.lastname }}</h5>
+
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">EMAIL :{{ data.email }}</li>
+              <li class="list-group-item">PHONE:{{ data.phone }}</li>
+              <li class="list-group-item">ADRESS :{{ data.adress }}</li>
+            </ul>
+            <div class="card-body">
+              <a href="/user1/" class="btn btn-secondary">BACK</a>
+           
+            
+            
+                <!-- <a href="/updateuser/" class="btn-secondary">UPDATE</a> -->
+
+            </div>
+          </div>
+
+
+
+
+
+       
      
       
        

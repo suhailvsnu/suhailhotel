@@ -61,14 +61,18 @@ style="padding: 15px;"
           </div>
         </div>
         <!-- <div style=" margin-left: 50px;"> -->
-        <a class=" text-warning" href="/"style="padding: 15px;" > Home</a>
+        <a class=" text-warning" href="/hotelhomepage/"style="padding: 15px;" > Home</a>
         <a class="text-warning  " style="padding: 15px;" href="/" > About</a>
         <a class=" text-warning" href="/"style="padding: 15px;" > Resturant</a>
-        <a ><img src="{{ item.image}}"  height="100 " width="100"  ></a>
+
+
 
 
       
         <a class="text-warning  " style="padding: 15px; margin-right: 500px;" href="/login/" > Logout</a>
+
+        <a ><img src="{{ item.image}}"  height="100 " width="100"  ></a>
+
 
 
         
@@ -135,10 +139,12 @@ style="padding: 15px;"
 
 
       <section >
-        <h1 style="text-align: center;">Hello</h1>
+        <h1 style="text-align: center;">Hello {{item.username}}</h1>
         <div class="p-3 mb-2 bg-light text-dark">
-          <a class="btn btn-secondary" href="/addfoodmenu/"style="padding: 15px; " >  FOOD MENU</a>
+          <a class="btn btn-secondary" href="/addfood/"style="padding: 15px; " >  FOOD MENU</a>
           <a class="btn btn-secondary" href="/viewfood/"style="padding: 15px; " >VIEW FOOD MENU</a>
+          <a class="btn btn-secondary" href="/viewhotelprofile/"style="padding: 15px; " >VIEW PROFILE</a>
+
            <!-- <a class="btn btn-secondary" href="/updateuser/"style="padding: 15px; " > DELE</a> -->
 
 
