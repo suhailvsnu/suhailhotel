@@ -134,12 +134,14 @@ def hotelhomepage(request):
     a=request.session['username']
     c=tbl_resturant.objects.get(username=a)
     return render(request,'hotelhomepage.html',{'item':c})
-def updatehotel1(request,id):
-    a=tbl_resturant.objects.get(id=id)
-    return render(request,'updatehotel.html',{'x':a})
-
+def updatehotel1(request):
+    a=tbl_resturant.objects.all()
+    # return render(request,'updatehotel.html',{'x':a})
+    return render(request,'updateRestView.html',{'data':a})
+def updtRest2(request,id):
+     a=tbl_resturant.objects.get(id=id)
+     return render(request,'updatehotel.html',{'x':a})
 def updatehotel2(request,id):
-    
  a=tbl_resturant.objects.get(id=id)
  try:
      a.username=request.POST.get('username')   
