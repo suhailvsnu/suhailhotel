@@ -35,19 +35,22 @@ urlpatterns = [
     path('removehotel/',views.removehotel),
     path('delhotel/<int:id>',views.delhotel),
     path('hotelhomepage/',views.hotelhomepage),
-    
-    path('updatehotel/',views.updatehotel1),
-    path('updtRest2/<int:id>',views.updtRest2),
 
-    path('updatehotel2/<int:id>',views.updatehotel2),
+  
     path('userview/',views.viewuser),
-    path('updateuser1/<int:id>',views.updateuser1),
-    path('updateuser2/<int:id>',views.updateuser2),
+  
     path('addfood/',views.addfood),
     path('addfoodmenu/',views.addfoodmenu),
     path('viewfood/',views.viewfood),
     path('viewhotelprofile/',views.viewhotelprofile),
-  
+    path('addmenu/',views.addmenu),
+    path('updateuser1/',views.updateuser1),
+    path('updateuser2/<int:id>',views.updateuser2),
+    path('updateuser3/<int:id>',views.updateuser3),
+    path('updatehotel/',views.updatehotel1),
+    path('updtRest2/<int:id>',views.updtRest2),
+    path('updatehotel2/<int:id>',views.updatehotel2),
+    
     
 
     

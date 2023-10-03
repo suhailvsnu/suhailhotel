@@ -134,9 +134,84 @@ def hotelhomepage(request):
     a=request.session['username']
     c=tbl_resturant.objects.get(username=a)
     return render(request,'hotelhomepage.html',{'item':c})
+
+def viewuser(request):
+     a = request.session['username']
+     c=tbl_user.objects.get (username=a)
+     return render (request,'viewuser.html',{'data':c})
+
+def updateuser1(request):
+     
+
+     a = request.session['username']
+     c=tbl_user.objects.get (username=a)
+     return render(request,'updateuserview.html',{'data':c})
+def updateuser2(request,id):
+        d=tbl_user.objects.get(id=id)
+        return render(request,'updateuser.html',{'x':d})
+
+
+def updateuser3(request,id):
+ d=tbl_user.objects.get(id=id)   
+
+ try: 
+    d.username=request.POST.get('username') 
+    d.firstname=request.POST.get('firstname')
+    d.lastname=request.POST.get('lastname')
+    d.email=request.POST.get('email')
+    d.gender=request.POST.get('gender') 
+    d.phone=request.POST.get('phone')
+    d.adress=request.POST.get('adress')
+    d.district=request.POST.get('district')
+    photo=request.FILES['image'] 
+    fs= FileSystemStorage()
+    filename=fs.save(photo.name,photo) 
+    uploaded_file_url=fs.url(filename)
+    d.image=uploaded_file_url
+   
+    d.save()
+ except:
+    d.username=request.POST.get('username') 
+    d.firstname=request.POST.get('firstname')
+    d.lastname=request.POST.get('lastname')
+    d.email=request.POST.get('email')
+    d.gender=request.POST.get('gender') 
+    d.phone=request.POST.get('phone')
+    d.adress=request.POST.get('adress')
+    d.district=request.POST.get('district')
+    d.save()
+
+    return redirect('/userview/')
+ 
+def addfood(request):
+    a=request.session['username']
+
+    return render(request,'foodmenu.html',{'data':a})
+def addfoodmenu(request):
+    c=tbl_foodMenu()
+    c.restname=request.POST.get('rname') 
+    c.menuname=request.POST.get('mname')
+    c.type=request.POST.get('type')
+    c.cusine=request.POST.get('cusine')   
+    c.origin=request.POST.get('orgin') 
+    c.save()
+    return redirect('/hotelhomepage/')
+
+def viewfood(request):
+    c=tbl_foodMenu.objects.all()
+    return render(request,'viewfood.html',{'data':c})
+def viewhotelprofile(request):
+     a = request.session['username']
+     c=tbl_resturant.objects.get (username=a)
+
+     return render(request,'viewrestprofile.html',{'data':c})
+def addmenu(request):
+    a = request.session['username']
+    b=tbl_foodMenu.objects.filter(restname=a)
+
+    return render(request,'addmenuitem.html',{'data':a,"data1":b})
 def updatehotel1(request):
     a=tbl_resturant.objects.all()
-    # return render(request,'updatehotel.html',{'x':a})
     return render(request,'updateRestView.html',{'data':a})
 def updtRest2(request,id):
      a=tbl_resturant.objects.get(id=id)
@@ -177,66 +252,6 @@ def updatehotel2(request,id):
         a.save()
         
  return redirect('/viewhotel/')
-def viewuser(request):
-     a = request.session['username']
-     c=tbl_user.objects.get (username=a)
-     return render (request,'viewuser.html',{'data':c})
-def updateuser1(request,id):
-    d=tbl_user.objects.get(id=id)
-    return render(request,'updateuser.html',{'x':d})
-def updateuser2(request,id):
- d=tbl_user.objects.get(id=id)   
-
- try: 
-    d.username=request.POST.get('username') 
-    d.firstname=request.POST.get('firstname')
-    d.lastname=request.POST.get('lastname')
-    d.email=request.POST.get('email')
-    d.gender=request.POST.get('gender') 
-    d.phone=request.POST.get('phone')
-    d.adress=request.POST.get('adress')
-    d.district=request.POST.get('district')
-    photo=request.FILES['image'] 
-    fs= FileSystemStorage()
-    filename=fs.save(photo.name,photo) 
-    uploaded_file_url=fs.url(filename)
-    d.image=uploaded_file_url
-   
-    d.save()
- except:
-    d.username=request.POST.get('username') 
-    d.firstname=request.POST.get('firstname')
-    d.lastname=request.POST.get('lastname')
-    d.email=request.POST.get('email')
-    d.gender=request.POST.get('gender') 
-    d.phone=request.POST.get('phone')
-    d.adress=request.POST.get('adress')
-    d.district=request.POST.get('district')
-    d.save()
-
-    return redirect('/userview/')
- 
-def addfood(request):
-    return render(request,'foodmenu.html')
-def addfoodmenu(request):
-    c=tbl_foodMenu()
-    c.restname=request.POST.get('rname') 
-    c.menuname=request.POST.get('mname')
-    c.type=request.POST.get('type')
-    c.cusine=request.POST.get('cusine')   
-    c.origin=request.POST.get('orgin') 
-    c.save()
-    return redirect('/hotelhomepage/')
-
-def viewfood(request):
-    c=tbl_foodMenu.objects.all()
-    return render(request,'viewfood.html',{'data':c})
-def viewhotelprofile(request):
-     a = request.session['username']
-     c=tbl_resturant.objects.get (username=a)
-
-     return render(request,'viewrestprofile.html',{'data':c})
-
 
 
 
