@@ -111,25 +111,25 @@
             <div class="card card-4">
                 <div class="card-body">
                     <h2 class="title">Update User</h2>
-                    <form action="/updateuser2/" method="POST" enctype="multipart/form-data">
+                    <form action="/updateuser3/" method="POST" enctype="multipart/form-data">
                       {% csrf_token %}
                         <div class="row row-space">
                           <div class="col-2">
                             <div class="input-group">
                                 <label class="label">user name</label>
-                                <input class="input--style-4" type="text" name="username">
+                                <input class="input--style-4" type="text" name="username" value="{{x.username}}">
                             </div>
                         </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">first name</label>
-                                    <input class="input--style-4" type="text" name="firstname">
+                                    <input class="input--style-4" type="text" name="firstname" value="{{x.firstname}}">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">last name</label>
-                                    <input class="input--style-4" type="text" name="lastname">
+                                    <input class="input--style-4" type="text" name="lastname"  value="{{x.lastname}}">
                                 </div>
                                 
                             </div>
@@ -144,7 +144,7 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Adress</label>
-                                    <input class="input--style-4" type="text" name="adress">
+                                    <input class="input--style-4" type="text" name="adress"  value="{{x.adress}}">
                                 </div>
                                 
                                 
@@ -156,7 +156,7 @@
                                 <div class="input-group">
                                     <label class="label">District</label>
                                     <div class="input-group-icon">
-                                        <input class="input--style-4 js-datepicker" type="" name="district">
+                                        <input class="input--style-4 js-datepicker" type="" name="district"  value="{{x.district}}">
                                        
                                         
                                         <!-- <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i> -->
@@ -170,11 +170,11 @@
                                     <label class="label">Gender</label>
                                     <div class="p-t-10">
                                         <label class="radio-container m-r-45">Male
-                                            <input type="radio" checked="checked" name="gender">
+                                            <input type="radio" checked="checked" name="gender"  value="{{x.gender}}">
                                             <span class="checkmark"></span>
                                         </label>
                                         <label class="radio-container">Female
-                                            <input type="radio" name="gender">
+                                            <input type="radio" name="gender"  value="{{x.gender}}">
                                             <span class="checkmark"></span>
                                         </label>
                                     </div>
@@ -185,20 +185,20 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Email</label>
-                                    <input class="input--style-4" type="email" name="email">
+                                    <input class="input--style-4" type="email" name="email"  value="{{x.email}}">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Phone Number</label>
-                                    <input class="input--style-4" type="text" name="phone">
+                                    <input class="input--style-4" type="text" name="phone"  value="{{x.phone}}">
                                 </div>
                             </div>
                             <div class="col-2">
                               <div class="input-group">
                                   <label class="label">Image</label>
                                   <div class="input-group-icon">
-                                    <input type="file"  name="image" value="{{x.image}}" > <br><br> 
+                                    <input type="file"  name="image" value="{{x.image}}"  value="{{x.image}}"> <br><br> 
                                   </div>
                               </div>
                           </div>

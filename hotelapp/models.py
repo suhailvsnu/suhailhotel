@@ -51,7 +51,21 @@ class tbl_foodMenu(models.Model):
     
    
     class Meta:
-        db_table="tbl_foodMenu"         
+        db_table="tbl_foodMenu"      
+
+class fooditem(models.Model):
+    RestaurantName=models.CharField(max_length=30)
+    MenuName=models.CharField(max_length=30)
+    MenuItemName=models.CharField(max_length=30)
+    Quantity=models.IntegerField()
+    price=models.IntegerField()
+    cookingtime=models.CharField(max_length=30)
+    status=models.CharField(max_length=30,default="available")
+    type=models.CharField(max_length=30)
+    class Meta:
+        db_table="fooditem"    
+
+
 
 
 

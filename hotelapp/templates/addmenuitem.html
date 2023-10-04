@@ -80,15 +80,12 @@
       </div>
     </div>
      <!-- <div style=" margin-left: 50px;"> -->
-      <a class=" text-warning" href="/admin1/"style="padding: 15px;" > Home</a>
+      <a class=" text-warning" href="/hotelhomepage/"style="padding: 15px;" > Home</a>
       <a class="text-warning  " style="padding: 15px;" href="/" > About</a>
-      <a class="text-warning  " style="padding: 15px;" href="/addhotel/" > AddResturant</a>
-      <a class="text-warning  "  href="/viewhotel/" > ViewResturant</a>
-
-      <!-- <a class=" text-warning" href="/"style="padding: 15px;" > Resturant</a> -->
+      <a class=" text-warning" href="/"style="padding: 15px;" > Resturant</a>
       <!-- <a class="text-warning  " style="padding: 15px;" href="/" > About</a> -->
       <!-- <a class="  text-warning" href="/"style="padding: 15px;" > Home</a> -->
-      <a class="text-warning  " style="padding: 15px; margin-right: 500px;" href="/" > Resturant</a>
+      <a class="text-warning  " style="padding: 15px; margin-right: 500px;" href="/login/" > Login</a>
    
   </nav>
   <section class="py-5 overflow-hidden bg-primary" id="home">
@@ -113,84 +110,62 @@
         <div class="wrapper wrapper--w680">
             <div class="card card-4">
                 <div class="card-body">
-                    <h2 class="title">Update  Resturant</h2>
-                    <form action="/updatehotel2/{{x.id}}" method="POST" enctype="multipart/form-data">
+                    <h2 class="title">Add Food</h2>
+                    <form action="/addfoodmenu/" method="POST" enctype="multipart/form-data">
                       {% csrf_token %}
                         <div class="row row-space">
                           <div class="col-2">
                             <div class="input-group">
-                                <label class="label">user name</label>
-                                <input class="input--style-4" type="text" name="username" value="{{x.username}}">
+                                <label class="label">Resturant name</label>
+                                <input class="input--style-4" type="text" name="rname" value="{{data}}">
                             </div>
                         </div>
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">first name</label>
-                                    <input class="input--style-4" type="text" name="firstname" value="{{x.firstname}}">
+                                    <!-- <label class="label">Menu name</label> -->
+                                    <select class="input--style-4" name="mname">
+                                        <option  class="input--style-4" >Menu name</option>
+                                        {% for x in data1 %}
+                                        <option  class="input--style-4" >{{ x.menuname }}</option>
+                                        {% endfor %}
+                                    </select>
+                                    <!-- <input class="input--style-4" type="text" name="mname"> -->
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">last name</label>
-                                    <input class="input--style-4" type="text" name="lastname" value="{{x.lastname}}" >
+                                    <label class="label">cusine</label>
+                                    <input class="input--style-4" type="text" name="cusine">
                                 </div>
                                 
-                                
-                                    
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">Resturant name</label>
-                                    <input class="input--style-4" type="text" name="rname" value="{{x.resturantname}}">
+                                    <label class="label">Type</label>
+                                    <input class="input--style-4" type="text" name="type">
                                 </div>
                                 
 
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">Authorized Person</label>
-                                    <input class="input--style-4" type="text" name="atperson" value="{{x.authorizedperson}}">
+                                    <label class="label">Orgin</label>
+                                    <input class="input--style-4" type="text" name="orgin">
                                 </div>
                                 
                                 
                             </div>
-                            
-                            <!-- <div class="col-2">
-                              <div class="input-group">
-                                  <label class="label">Password</label>
-                                  <input class="input--style-4" type="password" name="password">
-                              </div> -->
-                              
-<!-- 
-                          </div> 
-                          <div class="col-2">
-                            <div class="input-group">
-                                <label class="label">Confirm Password</label>
-                                <input class="input--style-4" type="password" name="password">
-                            </div> -->
-                            
-<!-- 
-                        </div> -->
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">location</label>
-                                    <input class="input--style-4" type="text" name="location" value="{{x.location}}">
-                                </div>
-                                
-                                
-                            </div>
-                           
 
                         </div>
-                        <div class="row row-space">
+                        <!-- <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">phone</label>
+                                    <label class="label">District</label>
                                     <div class="input-group-icon">
-                                        <input class="input--style-4 js-datepicker" type="text" name="phone" value="{{x.phone}}">
-                                       
+                                        <input class="input--style-4 js-datepicker" type="" name="district">
+                                        -->
                                         
-                                        <!-- <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i> -->
+                                        <!-- <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
                                     </div>
                                 </div>
                             </div>
@@ -198,14 +173,14 @@
                             
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">Type of Resturant</label>
+                                    <label class="label">Gender</label>
                                     <div class="p-t-10">
-                                        <label class="radio-container m-r-45">A/C
-                                            <input type="radio" checked="checked" name="type" value="{{x.type}}">
+                                        <label class="radio-container m-r-45">Male
+                                            <input type="radio" checked="checked" name="gender">
                                             <span class="checkmark"></span>
                                         </label>
-                                        <label class="radio-container">Non-A/C
-                                            <input type="radio" name="type" value="{{x.type}}">
+                                        <label class="radio-container">Female
+                                            <input type="radio" name="gender">
                                             <span class="checkmark"></span>
                                         </label>
                                     </div>
@@ -216,17 +191,15 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Email</label>
-                                    <input class="input--style-4" type="email" name="email" value="{{x.email}}">
+                                    <input class="input--style-4" type="email" name="email">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">No of Staff </label>
-                                    <input class="input--style-4" type="text" name="staff" value="{{x.staff}}">
+                                    <label class="label">Phone Number</label>
+                                    <input class="input--style-4" type="text" name="phone">
                                 </div>
                             </div>
-                        </div>
-                       
                             <div class="col-2">
                               <div class="input-group">
                                   <label class="label">Image</label>
@@ -235,13 +208,23 @@
                                   </div>
                               </div>
                           </div>
-                           
+                        </div> -->
+                        <!-- <div class="input-group">
+                            <label class="label">Subject</label>
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select name="subject">
+                                    <option disabled="disabled" selected="selected">Choose option</option>
+                                    <option>Subject 1</option>
+                                    <option>Subject 2</option>
+                                    <option>Subject 3</option>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div> -->
                         <div class="p-t-15">
                             <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
                         </div>
-                        </form>
-                        </div>
-                       
+                    </form>
                 </div>
             </div>
         </div>
