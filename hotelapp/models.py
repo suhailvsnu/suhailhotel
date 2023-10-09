@@ -65,6 +65,18 @@ class fooditem(models.Model):
     class Meta:
         db_table="fooditem"    
 
+class offer(models.Model):
+    
+    MenuItemName=models.CharField(max_length=30)
+    offer=models.CharField(max_length=30)
+    startdate=models.CharField(max_length=30)
+    enddate=models.CharField(max_length=30)
+    details=models.CharField(max_length=30)
+    status=models.CharField(max_length=30)
+    type=models.CharField(max_length=30)
+    class Meta:
+        db_table="offer"             
+
 
 
 

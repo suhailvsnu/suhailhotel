@@ -50,7 +50,10 @@ urlpatterns = [
     path('updatehotel/',views.updatehotel1),
     path('updtRest2/<int:id>',views.updtRest2),
     path('updatehotel2/<int:id>',views.updatehotel2),
-    
+    path('addoffer/',views.addoffer),
+    path('addoffersform/',views.addofferform),
+    path('viewmenuitem/',views.viewfoodmenuitem),
+    path('viewoffer/',views.viewoffer),
     
 
     

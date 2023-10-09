@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 from django.http import HttpResponse
 from django.core.files.storage import FileSystemStorage
-from hotelapp.models import tbl_user,tbl_resturant,tbl_accounts,tbl_foodMenu
+from hotelapp.models import tbl_user,tbl_resturant,tbl_accounts,tbl_foodMenu,fooditem,offer
 
 # Create your views here.
 def index(request):
@@ -189,6 +189,23 @@ def addfood(request):
     return render(request,'foodmenu.html',{'data':a})
 def addfoodmenu(request):
     c=tbl_foodMenu()
+    d=fooditem()
+    d.RestaurantName=request.POST.get('rname') 
+    d.MenuName=request.POST.get('mname')
+    d.type=request.POST.get('type')
+   
+    d.MenuItemName=request.POST.get('menuitemname')
+    d.Quantity=request.POST.get('quant')
+    d.price=request.POST.get('price')
+    d.cookingtime=request.POST.get('time')
+    d.type=request.POST.get('type')
+    d.status=request.POST.get('status')
+    d.save()
+
+
+
+
+
     c.restname=request.POST.get('rname') 
     c.menuname=request.POST.get('mname')
     c.type=request.POST.get('type')
@@ -198,8 +215,8 @@ def addfoodmenu(request):
     return redirect('/hotelhomepage/')
 
 def viewfood(request):
-    c=tbl_foodMenu.objects.all()
-    return render(request,'viewfood.html',{'data':c})
+     b=tbl_foodMenu.objects.all()
+     return render(request,'viewfood.html',{'data':b})
 def viewhotelprofile(request):
      a = request.session['username']
      c=tbl_resturant.objects.get (username=a)
@@ -252,6 +269,32 @@ def updatehotel2(request,id):
         a.save()
         
  return redirect('/viewhotel/')
+def addoffer(request):
+    a = request.session['username']
+    b=tbl_foodMenu.objects.filter(restname=a)
+
+    return render(request,'addoffer.html',{'data':a,"data1":b})
+
+def  addofferform(request):
+    p1=offer()
+   
+
+    p1.MenuItemName=request.POST.get('MenuItemName')
+    p1.offer=request.POST.get('offer')
+    p1.startdate=request.POST.get('startdate')
+    p1.enddate=request.POST.get('enddate')
+    p1.details=request.POST.get('details')
+    p1.status=request.POST.get('status')
+    p1.save()
+    return redirect('/')
+def viewfoodmenuitem(request):
+     b=fooditem.objects.all()
+     return render(request,'viewfoodmenuitem.html',{'data':b})
+def viewoffer(request):
+    b=offer.objects.all()
+    return render(request,'viewoffer.html',{'data':b})
+
+
 
 
 
