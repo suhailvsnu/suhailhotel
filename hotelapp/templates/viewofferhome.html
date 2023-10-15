@@ -60,16 +60,13 @@
           </div>
         </div>
         <!-- <div style=" margin-left: 50px;"> -->
-        <a class=" text-warning" href="/hotelhomepage/"style="padding: 15px;" > Home</a>
+        <a class=" text-warning" href="/"style="padding: 15px;" > Home</a>
         <a class="text-warning  " style="padding: 15px;" href="/" > About</a>
-        <a class="text-warning  " style="padding: 15px;" href="/addhotel/" > AddResturant</a>
-        <a class="text-warning  "  href="/viewhotel/" > ViewResturant</a>
 
         <a class=" text-warning" href="/"style="padding: 15px; margin-right: 500px;" > Resturant</a>
         <!-- <a class="text-warning  " style="padding: 15px;" href="/" > </a> -->
         <!-- <a class="  text-warning" href="/"style="padding: 15px;" > Home</a> -->
         <!-- <a class="text-warning  " style="padding: 15px; margin-right: 500px;" href="/login/" > Login</a> -->
-        <a class="text-warning  "   href="/login/" style="padding: 15px;" > Logout</a>
 
         
       </div>
@@ -140,23 +137,28 @@
         <table class="table  table-bordered table-striped table-hover table-sm ">
          
           <thead class="thead-dark">
-              <th> Resturant Name</th>
-              <th> Menu Name</th>
-              <th>Cusine</th>
+              <th>Menu Item Name</th>
+              <th> Offer</th>
+              <th>startdate</th>
+              <th>enddate</th>
+              <th>details</th>
+              <th>status</th>
               <th>Type</th>
-              <th>Orgin</th>
+
+
 
              
           </thead>
           <tbody>
             {% for item in data %}
               <tr>
-                  <td>{{ item.restname}}</td>
-                  <td> {{ item.menuname}}</td>
+                  <td>{{ item.MenuItemName}}</td>
+                  <td> {{ item.offer}}</td>
+                  <td>{{ item.startdate}}</td>
+                  <td>{{ item.enddate}}</td>
+                  <td>{{ item.details}}</td>
+                  <td>{{ item.status}}</td>
                   <td>{{ item.type}}</td>
-                  <td>{{ item.cusine}}</td>
-                  <td>{{ item.origin}}</td>
-                  <td> <a class="btn-secondary" href="/addcart/"style="padding: 15px; " >Add to Cart</a></td>
 
 
 

@@ -60,16 +60,16 @@
           </div>
         </div>
         <!-- <div style=" margin-left: 50px;"> -->
-        <a class=" text-warning" href="/hotelhomepage/"style="padding: 15px;" > Home</a>
+        <a class=" text-warning" href="/"style="padding: 15px;" > Home</a>
         <a class="text-warning  " style="padding: 15px;" href="/" > About</a>
-        <a class="text-warning  " style="padding: 15px;" href="/addhotel/" > AddResturant</a>
-        <a class="text-warning  "  href="/viewhotel/" > ViewResturant</a>
+        <!-- <a class="text-warning  " style="padding: 15px;" href="/addhotel/" > AddResturant</a> -->
+        <!-- <a class="text-warning  "  href="/viewhotel/" > ViewResturant</a> -->
 
         <a class=" text-warning" href="/"style="padding: 15px; margin-right: 500px;" > Resturant</a>
         <!-- <a class="text-warning  " style="padding: 15px;" href="/" > </a> -->
         <!-- <a class="  text-warning" href="/"style="padding: 15px;" > Home</a> -->
         <!-- <a class="text-warning  " style="padding: 15px; margin-right: 500px;" href="/login/" > Login</a> -->
-        <a class="text-warning  "   href="/login/" style="padding: 15px;" > Logout</a>
+        <!-- <a class="text-warning  "   href="/login/" style="padding: 15px;" > Logout</a> -->
 
         
       </div>
@@ -136,31 +136,24 @@
 
       <section >
         <div class="table-responsive">
-        <h1 style="text-align: center;">View Foods </h1>
+        <h1 style="text-align: center;">Resturant list </h1>
         <table class="table  table-bordered table-striped table-hover table-sm ">
          
           <thead class="thead-dark">
-              <th> Resturant Name</th>
-              <th> Menu Name</th>
-              <th>Cusine</th>
-              <th>Type</th>
-              <th>Orgin</th>
-
+              <th> Resturant name</th>
+              <th> Authorized person</th>
+              <th>Location</th>
+              <th>Image</th>
              
           </thead>
           <tbody>
             {% for item in data %}
               <tr>
-                  <td>{{ item.restname}}</td>
-                  <td> {{ item.menuname}}</td>
-                  <td>{{ item.type}}</td>
-                  <td>{{ item.cusine}}</td>
-                  <td>{{ item.origin}}</td>
-                  <td> <a class="btn-secondary" href="/addcart/"style="padding: 15px; " >Add to Cart</a></td>
-
-
-
-
+                  <td>{{ item.resturantname}}</td>
+                  <td> {{ item.authorizedperson}}</td>
+                  <td>{{ item.location}}</td>
+                  <td><img src="{{ item.image}}" height="150" width="150"></td>
+                 
                   
               </tr>
               {% endfor %}

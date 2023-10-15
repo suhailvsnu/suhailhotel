@@ -273,7 +273,7 @@ def addoffer(request):
     a = request.session['username']
     b=tbl_foodMenu.objects.filter(restname=a)
 
-    return render(request,'addoffer.html',{'data':a,"data1":b})
+    return render(request,'addoffer.html',{'data':a,"data1":b,"data1":b})
 
 def  addofferform(request):
     p1=offer()
@@ -286,13 +286,115 @@ def  addofferform(request):
     p1.details=request.POST.get('details')
     p1.status=request.POST.get('status')
     p1.save()
-    return redirect('/')
+    return redirect('/viewhotel/')
 def viewfoodmenuitem(request):
      b=fooditem.objects.all()
      return render(request,'viewfoodmenuitem.html',{'data':b})
 def viewoffer(request):
     b=offer.objects.all()
     return render(request,'viewoffer.html',{'data':b})
+def upddelfoodmenu(request):
+    b=tbl_foodMenu.objects.all()
+    return render(request,'upddelfoodmenu.html',{'data':b})
+def deletefoodmenu(request,id):
+    b=tbl_foodMenu.objects.get(id=id)
+    b.delete()
+    return redirect('/delupfoodmenu/')   
+def updatefoodmenu1(request):
+    b=tbl_foodMenu.objects.all()
+    return render(request,'updatefoodmenuview.html',{'data':b})
+def updatefoodmenu2(request,id):
+    a=tbl_foodMenu.objects.get(id=id)
+    b=tbl_foodMenu.objects.filter(restname=a)
+
+    return render(request,'updatefoodmenu2.html',{'x':a})
+def updatefoodmenu3(request,id):
+    a=tbl_foodMenu.objects.get(id=id)
+    a.restname=request.POST.get('rname') 
+    a.menuname=request.POST.get('mname')
+    a.type=request.POST.get('type')
+    a.cusine=request.POST.get('cusine')   
+    a.origin=request.POST.get('orgin') 
+    a.save()
+
+    return redirect('/delupfoodmenu/')
+def delupfooditem(request):
+    b=fooditem.objects.all()
+    return render(request,'updatedeletefooditem.html',{'data':b})
+def delfooditem(request,id):
+    b=fooditem.objects.get(id=id)
+    b.delete()
+    return redirect('/delupitem/')
+def updatefooditem1(request):
+    b=fooditem.objects.all()
+    return render(request,'updatefoodview.html',{'data':b})
+def updatefooditem2(request,id):
+    b=fooditem.objects.get(id=id)
+    return render(request,'updatefooditem2.html',{'x':b})
+
+def delupoffer(request):
+     b=offer.objects.all()
+     return render(request,'delupoffer.html',{'data':b})
+def deleteoffer(request,id):
+    b=offer.objects.get(id=id)
+    b.delete()
+    return redirect('/delupoffer/')
+def updateoffer1(request):
+    b=offer.objects.all()
+    return render(request,'updateofferview.html',{'data':b})
+def updateoffer2(request,id):
+    a = request.session['username']
+
+    b=tbl_foodMenu.objects.filter(restname=a)
+    c=offer.objects.get(id=id)
+
+
+    return render(request,'updateoffer.html',{'data':a,'data1':b,'x':c})
+def updateoffer3(request,id):
+    p1=offer.objects.get(id=id)
+   
+
+    p1.MenuItemName=request.POST.get('MenuItemName')
+    p1.offer=request.POST.get('offer')
+    p1.startdate=request.POST.get('startdate')
+    p1.enddate=request.POST.get('enddate')
+    p1.details=request.POST.get('details')
+    p1.status=request.POST.get('status')
+    p1.save()
+    return redirect('/delupoffer/')
+def viewresthome(request):
+     b=tbl_resturant.objects.all()
+     return render(request,'viewresthome.html',{'data':b})
+def viewofferhome(request):
+     b=offer.objects.all()
+     return render(request,'viewofferhome.html',{'data':b})
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+        
+
+
+
+
+
+
+
 
 
 
