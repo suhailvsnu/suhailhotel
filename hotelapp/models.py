@@ -75,7 +75,26 @@ class offer(models.Model):
     status=models.CharField(max_length=30)
     type=models.CharField(max_length=30)
     class Meta:
-        db_table="offer"             
+        db_table="offer"          
+
+class tbl_cart(models.Model):
+    username=models.CharField(max_length=200)
+    MenuItemName=models.CharField(max_length=30)
+    resturantname=models.CharField(max_length=200)
+    quantity=models.IntegerField()
+    price=models.IntegerField()
+    totalamount=models.IntegerField()
+    image=models.CharField(max_length=200)
+
+    class Meta:
+        db_table="tbl_cart"
+
+
+
+
+
+
+
 
 
 

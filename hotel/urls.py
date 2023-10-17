@@ -54,6 +54,22 @@ urlpatterns = [
     path('addoffersform/',views.addofferform),
     path('viewmenuitem/',views.viewfoodmenuitem),
     path('viewoffer/',views.viewoffer),
+    path('delupfoodmenu/',views.upddelfoodmenu),
+    path('delfoodmenu/<int:id>',views.deletefoodmenu),
+    path('updfoodmenu/',views.updatefoodmenu1),
+    path('updfoodmenu2/<int:id>',views.updatefoodmenu2),
+    path('updatefoodmenu3/<int:id>',views.updatefoodmenu3),
+    path('delupitem/',views.delupfooditem),
+    path('delfooditem/<int:id>',views.delfooditem),
+    path('updfooditem/',views.updatefooditem1),
+    path('updfooditem2/<int:id>',views.updatefooditem2),
+    path('delupoffer/',views.delupoffer),
+    path('deloffer/<int:id>',views.deleteoffer),
+    path('upoffer/',views.updateoffer1),
+    path('upoffer2/<int:id>',views.updateoffer2),
+    path('updateoffer3/<int:id>',views.updateoffer3),
+    path('vierest/',views.viewresthome),
+    path('viewofferhome/',views.viewofferhome),
     
 
     

@@ -140,25 +140,33 @@
         <table class="table  table-bordered table-striped table-hover table-sm ">
          
           <thead class="thead-dark">
-              <th> Resturant Name</th>
-              <th> Menu Name</th>
-              <th>Cusine</th>
-              <th>Type</th>
-              <th>Orgin</th>
+            <th> Resturant Name</th>
+            <th> Menu Name</th>
+           
+            <th>Menu Item Name</th>
+            <th>Quantity</th>
+            <th>price</th>
+            <th>cookingtime</th>
+            <th>Actions</th>
 
+            
              
           </thead>
           <tbody>
             {% for item in data %}
               <tr>
-                  <td>{{ item.restname}}</td>
-                  <td> {{ item.menuname}}</td>
-                  <td>{{ item.type}}</td>
-                  <td>{{ item.cusine}}</td>
-                  <td>{{ item.origin}}</td>
-                  <td> <a class="btn-secondary" href="/addcart/"style="padding: 15px; " >Add to Cart</a></td>
+                <td>{{ item.RestaurantName}}</td>
+                <td> {{ item.MenuName}}</td>
+                <td>{{ item.MenuItemName}}</td>
+                <td>{{ item.cookingtime}}</td>
+                <td>{{ item.status}}</td>
+                <td>{{ item.type}}</td>
+                <td> <a class="btn-secondary" href="/updfooditem2/{{item.id}}"style="padding: 15px; " >Update</a></td>
 
 
+
+
+                  
 
 
                   

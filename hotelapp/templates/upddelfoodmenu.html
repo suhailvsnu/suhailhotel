@@ -145,6 +145,7 @@
               <th>Cusine</th>
               <th>Type</th>
               <th>Orgin</th>
+              <th>Actions</th>
 
              
           </thead>
@@ -156,7 +157,8 @@
                   <td>{{ item.type}}</td>
                   <td>{{ item.cusine}}</td>
                   <td>{{ item.origin}}</td>
-                  <td> <a class="btn-secondary" href="/addcart/"style="padding: 15px; " >Add to Cart</a></td>
+                  <td> <a class="btn-secondary" href="/updfoodmenu/"style="padding: 15px; " >Update</a></td>
+                  <td><a class="btn-danger" href="/delfoodmenu/{{item.id}}"style="padding: 15px; " >Delete</a></td>
 
 
 
