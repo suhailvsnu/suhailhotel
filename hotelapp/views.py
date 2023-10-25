@@ -208,7 +208,7 @@ def addfoodmenu(request):
 
     c.restname=request.POST.get('rname') 
     c.menuname=request.POST.get('mname')
-    c.type=request.POST.get('type')
+    c.status=request.POST.get('status')
     c.cusine=request.POST.get('cusine')   
     c.origin=request.POST.get('orgin') 
     c.save()
