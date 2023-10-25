@@ -45,10 +45,9 @@ class tbl_accounts(models.Model):
 class tbl_foodMenu(models.Model):
     restname=models.CharField(max_length=30)
     menuname=models.CharField(max_length=30)
-    type=models.CharField(max_length=30)
     cusine=models.CharField(max_length=30)
     origin=models.CharField(max_length=30)
-    
+    status=models.CharField(max_length=30)
    
     class Meta:
         db_table="tbl_foodMenu"      
