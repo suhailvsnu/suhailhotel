@@ -111,7 +111,7 @@
             <div class="card card-4">
                 <div class="card-body">
                     <h2 class="title">Add Food</h2>
-                    <form action="/addfoodmenu/" method="POST" enctype="multipart/form-data">
+                    <form action="/addfooditem/" method="POST" enctype="multipart/form-data">
                       {% csrf_token %}
                         <div class="row row-space">
                           <div class="col-2">
@@ -134,93 +134,83 @@
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">cusine</label>
-                                    <input class="input--style-4" type="text" name="cusine">
+                                    <label class="label">Menuitem</label>
+                                    <input class="input--style-4" type="text" name="mitem">
                                 </div>
                                 
+                                  
                             </div>
                             <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Type</label>
-                                    <input class="input--style-4" type="text" name="type">
-                                </div>
+                              <label class="label">Type</label>
+                              <div class="p-t-10">
+                                  <label class="radio-container m-r-45">Veg
+                                      <input type="radio" checked="checked" name="type" value="veg">
+                                      <span class="checkmark"></span>
+                                  </label>
+                                  <label class="radio-container">Non Veg
+                                      <input type="radio" name="type" value="nonveg ">
+                                      <span class="checkmark"></span>
+                                  </label>
+                              </div>
+                             
+
                                 
+                            </div>
+                          
+                              
+                          </div>
+                          <div class="col-2">
+                            <div class="input-group">
+                                <label class="label">Quantity</label>
+                                <input class="input--style-4" type="text" name="qantity">
 
                             </div>
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Orgin</label>
-                                    <input class="input--style-4" type="text" name="orgin">
-                                </div>
+                        
+
+                          </div>
+                          <div class="col-2">
+
                                 
-                                
+                              <div class="input-group">
+                                <label class="label">Cooking time</label>
+                                <input class="input--style-4" type="text" name="cookingtime">
+
                             </div>
+                            
+                           
+                            
 
                         </div>
-                        <!-- <div class="row row-space">
+                        <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">District</label>
+                                    <label class="label">Prize</label>
                                     <div class="input-group-icon">
-                                        <input class="input--style-4 js-datepicker" type="" name="district">
-                                        -->
+                                        <input class="input--style-4 js-datepicker" type="text" name="prize">
+                                       
                                         
-                                        <!-- <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+                                       
                                     </div>
                                 </div>
                             </div>
                         
                             
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Gender</label>
-                                    <div class="p-t-10">
-                                        <label class="radio-container m-r-45">Male
-                                            <input type="radio" checked="checked" name="gender">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <label class="radio-container">Female
-                                            <input type="radio" name="gender">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    </div>
-                                </div>
+                            <label class="label">Status</label>
+                            <div class="p-t-10">
+                                <label class="radio-container m-r-45">Available
+                                    <input type="radio" checked="checked" name="status" value="Available">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="radio-container">Not Available
+                                    <input type="radio" name="status" value="notAvailable">
+                                    <span class="checkmark"></span>
+                                </label>
                             </div>
                         </div>
-                        <div class="row row-space">
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Email</label>
-                                    <input class="input--style-4" type="email" name="email">
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Phone Number</label>
-                                    <input class="input--style-4" type="text" name="phone">
-                                </div>
-                            </div>
-                            <div class="col-2">
-                              <div class="input-group">
-                                  <label class="label">Image</label>
-                                  <div class="input-group-icon">
-                                    <input type="file"  name="image" value="{{x.image}}" > <br><br> 
-                                  </div>
-                              </div>
-                          </div>
-                        </div> -->
-                        <!-- <div class="input-group">
-                            <label class="label">Subject</label>
-                            <div class="rs-select2 js-select-simple select--no-search">
-                                <select name="subject">
-                                    <option disabled="disabled" selected="selected">Choose option</option>
-                                    <option>Subject 1</option>
-                                    <option>Subject 2</option>
-                                    <option>Subject 3</option>
-                                </select>
-                                <div class="select-dropdown"></div>
-                            </div>
-                        </div> -->
+                        </div>
+                    
+                           
+                       
                         <div class="p-t-15">
                             <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
                         </div>

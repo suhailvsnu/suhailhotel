@@ -70,6 +70,7 @@ urlpatterns = [
     path('updateoffer3/<int:id>',views.updateoffer3),
     path('vierest/',views.viewresthome),
     path('viewofferhome/',views.viewofferhome),
+    path('addfooditem/',views.addfooditem),
     
 
     
