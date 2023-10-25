@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 from django.http import HttpResponse
 from django.core.files.storage import FileSystemStorage
-from hotelapp.models import tbl_user,tbl_resturant,tbl_accounts,tbl_foodMenu,tbl_fooditem,offer
+from hotelapp.models import tbl_user,tbl_resturant,tbl_accounts,tbl_foodMenu,fooditem,offer
 
 # Create your views here.
 def index(request):
@@ -272,7 +272,7 @@ def  addofferform(request):
     p1.save()
     return redirect('/viewhotel/')
 def viewfoodmenuitem(request):
-     b=tbl_fooditem.objects.all()
+     b=fooditem.objects.all()
      return render(request,'viewfoodmenuitem.html',{'data':b})
 def viewoffer(request):
     b=offer.objects.all()
@@ -303,17 +303,17 @@ def updatefoodmenu3(request,id):
 
     return redirect('/delupfoodmenu/')
 def delupfooditem(request):
-    b=tbl_fooditem.objects.all()
+    b=fooditem.objects.all()
     return render(request,'updatedeletefooditem.html',{'data':b})
 def delfooditem(request,id):
-    b=tbl_fooditem.objects.get(id=id)
+    b=fooditem.objects.get(id=id)
     b.delete()
     return redirect('/delupitem/')
 def updatefooditem1(request):
-    b=tbl_fooditem.objects.all()
+    b=fooditem.objects.all()
     return render(request,'updatefoodview.html',{'data':b})
 def updatefooditem2(request,id):
-    b=tbl_fooditem.objects.get(id=id)
+    b=fooditem.objects.get(id=id)
     return render(request,'updatefooditem2.html',{'x':b})
 
 def delupoffer(request):
@@ -353,7 +353,7 @@ def viewofferhome(request):
      b=offer.objects.all()
      return render(request,'viewofferhome.html',{'data':b})
 def addfooditem(request):
- c=tbl_fooditem()    
+ c=fooditem()    
  c.restaurantName=request.POST.get('rname')  
  c.menuName= request.POST.get('mname')  
  c.menuItemName=request.POST.get('mitem')  
