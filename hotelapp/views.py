@@ -188,30 +188,15 @@ def addfood(request):
 
     return render(request,'foodmenu.html',{'data':a})
 def addfoodmenu(request):
-    c=tbl_foodMenu()
-    d=fooditem()
+   
+    d=tbl_foodMenu()
     d.RestaurantName=request.POST.get('rname') 
     d.MenuName=request.POST.get('mname')
     d.type=request.POST.get('type')
-   
-    d.MenuItemName=request.POST.get('menuitemname')
-    d.Quantity=request.POST.get('quant')
-    d.price=request.POST.get('price')
-    d.cookingtime=request.POST.get('time')
-    d.type=request.POST.get('type')
+    d.cusine=request.POST.get('cusine')   
+    d.origin=request.POST.get('orgin')
     d.status=request.POST.get('status')
     d.save()
-
-
-
-
-
-    c.restname=request.POST.get('rname') 
-    c.menuname=request.POST.get('mname')
-    c.type=request.POST.get('type')
-    c.cusine=request.POST.get('cusine')   
-    c.origin=request.POST.get('orgin') 
-    c.save()
     return redirect('/hotelhomepage/')
 
 def viewfood(request):
