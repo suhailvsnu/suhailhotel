@@ -190,9 +190,8 @@ def addfood(request):
 def addfoodmenu(request):
    
     d=tbl_foodMenu()
-    d.RestaurantName=request.POST.get('rname') 
-    d.MenuName=request.POST.get('mname')
-    d.type=request.POST.get('type')
+    d.restname=request.POST.get('rname') 
+    d.menuname=request.POST.get('mname')
     d.cusine=request.POST.get('cusine')   
     d.origin=request.POST.get('orgin')
     d.status=request.POST.get('status')

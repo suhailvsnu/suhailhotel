@@ -48,7 +48,7 @@ class tbl_foodMenu(models.Model):
     cusine=models.CharField(max_length=30)
     origin=models.CharField(max_length=30)
     status=models.CharField(max_length=30)
-    image=models.CharField(max_length=300,default=None)
+    # image=models.CharField(max_length=300,default="None")
     class Meta:
         db_table="tbl_foodMenu"      
 
