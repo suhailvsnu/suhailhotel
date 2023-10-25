@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 from django.http import HttpResponse
 from django.core.files.storage import FileSystemStorage
-from hotelapp.models import tbl_user,tbl_resturant,tbl_accounts,tbl_foodMenu,tbl_fooditem,offer
+from hotelapp.models import tbl_user,tbl_resturant,tbl_accounts,tbl_foodMenu,tbl_fooditem1,offer
 
 # Create your views here.
 def index(request):
@@ -353,7 +353,7 @@ def viewofferhome(request):
      b=offer.objects.all()
      return render(request,'viewofferhome.html',{'data':b})
 def addfooditem(request):
- c=tbl_fooditem()    
+ c=tbl_fooditem1()    
  c.restaurantName=request.POST.get('rname')  
  c.menuName= request.POST.get('mname')  
  c.menuItemName=request.POST.get('mitem')  

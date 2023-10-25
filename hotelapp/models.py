@@ -52,7 +52,7 @@ class tbl_foodMenu(models.Model):
     class Meta:
         db_table="tbl_foodMenu"      
 
-class tbl_fooditem(models.Model):
+class tbl_fooditem1(models.Model):
     restaurantName=models.CharField(max_length=30)
     menuName=models.CharField(max_length=30)
     menuItemName=models.CharField(max_length=30)
@@ -62,7 +62,7 @@ class tbl_fooditem(models.Model):
     status=models.CharField(max_length=30,default="available")
     type=models.CharField(max_length=30)
     class Meta:
-        db_table="tbl_fooditem"    
+        db_table="tbl_fooditem1"    
 
 class offer(models.Model):
     
