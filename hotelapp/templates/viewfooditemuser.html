@@ -140,47 +140,51 @@
 
       <section >
         <!-- <div class="table-responsive"> -->
-        <h1 style="text-align: center;">Hii {{ data.username }} </h1>
-
-        <div class="card" style="width: 18rem; ">
-            <img class="card-img-top" src="{{ data.image}}" height="150" width="150">
-            <div class="card-body">
-              <h5 class="card-title">FIRST NAME :{{ data.firstname }}</h5>
-              <h5 class="card-title">LAST NAME {{ data.lastname }}</h5>
-
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">EMAIL :{{ data.email }}</li>
-              <li class="list-group-item">PHONE:{{ data.phone }}</li>
-              <li class="list-group-item">ADRESS :{{ data.adress }}</li>
-              
-            </ul>
-            <div class="card-body">
-              <a href="/user1/" class="btn btn-secondary">BACK</a>
-           
+            <section >
+                <div class="table-responsive">
+                    <h1 style="text-align: center;">View Foods </h1>
+                    <table class="table  table-bordered table-striped table-hover table-sm ">
+                     
+                      <thead class="thead-dark">
+                          <th> Resturant Name</th>
+                          <th> Menu Name</th>
+                         
+                          <th>Menu Item Name</th>
+                          <th>Quantity</th>
+                          <th>price</th>
+                          <th>cookingtime</th>
+                          <th>type</th>
+                          <th>status</th>
             
             
-                <!-- <a href="/updateuser/" class="btn-secondary">UPDATE</a> -->
-
-            </div>
-          </div>
-
-
-
-
-
-       
-     
-      
-       
-       
-           
-
-
-
-
-       
-
+                         
+                      </thead>
+                      <tbody>
+                        {% for item in data %}
+                          <tr>
+                              <td>{{ item.restaurantName}}</td>
+                              <td> {{ item.menuName}}</td>
+                              <td>{{ item.menuItemName}}</td>
+                              <td>{{ item.quantity}}</td>
+                              <td>{{ item.price}}</td>
+                               <td>{{ item.cookingtime}}</td>
+            
+                              <td>{{ item.type}}</td>
+                              <td>{{ item.status}}</td>
+            
+            
+            
+            
+            
+            
+                              
+                          </tr>
+                          {% endfor %}
+                      </tbody>
+                  </table>
+                  </div>
+                 
+            
     
       </section>
 
