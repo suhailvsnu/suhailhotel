@@ -140,31 +140,49 @@
 
       <section >
         <!-- <div class="table-responsive"> -->
-        <h1 style="text-align: center;">Hii {{ data.username }} </h1>
+            <section >
+                <div class="table-responsive">
+                <h1 style="text-align: center;">View Foods </h1>
+                <table class="table  table-bordered table-striped table-hover table-sm ">
+                 
+                  <thead class="thead-dark">
+                      <th> Resturant Name</th>
+                      <th> Menu Name</th>
+                     
+                      <th>Menu Item Name</th>
+                      <th>Quantity</th>
+                      <th>price</th>
+                      <th>cookingtime</th>
+                      <th>type</th>
+                      <th>status</th>
+        
+        
+                     
+                  </thead>
+                  <tbody>
+                    {% for item in data %}
+                      <tr>
+                          <td>{{ item.restname}}</td>
+                          <td> {{ item.menuname}}</td>
+                          <td>{{ item.cusine}}</td>
+                          <td>{{ item.quantity}}</td>
+                          <td>{{ item.origin}}</td>
+                           <td>{{ item.status}}</td>
+                           <td> <a class="btn-secondary" href="/viewmenuitem/{{item.id}}"style="padding: 15px; " >ViewMenuitem</a></td>
 
-        <div class="card" style="width: 18rem; ">
-            <img class="card-img-top" src="{{ data.image}}" height="150" width="150">
-            <div class="card-body">
-              <h5 class="card-title">FIRST NAME :{{ data.firstname }}</h5>
-              <h5 class="card-title">LAST NAME {{ data.lastname }}</h5>
-
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">EMAIL :{{ data.email }}</li>
-              <li class="list-group-item">PHONE:{{ data.phone }}</li>
-              <li class="list-group-item">ADRESS :{{ data.adress }}</li>
-              
-            </ul>
-            <div class="card-body">
-              <a href="/user1/" class="btn btn-secondary">BACK</a>
-           
-            
-            
-                <!-- <a href="/updateuser/" class="btn-secondary">UPDATE</a> -->
-
-            </div>
-          </div>
-
+                       
+        
+        
+        
+        
+        
+                          
+                      </tr>
+                      {% endfor %}
+                  </tbody>
+              </table>
+              </div>
+             
 
 
 

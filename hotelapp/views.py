@@ -365,6 +365,18 @@ def addfooditem(request):
 
  c.save()
  return redirect('/hotelhomepage/')
+def viewuserfoodmenu(request,id):
+    a=tbl_resturant.objects.get(id=id)
+    b=tbl_foodMenu.objects.filter(restname=a.username)
+    return render(request,'viewuserfoodmenu.html',{'data':b})
+def viewmenuitem(request,id):
+        a=tbl_foodMenu.objects.get(id=id)
+        b=fooditem.objects.filter(menuName=a.menuname)
+        return render(request,'viewfooditemuser.html',{'data':b})
+
+
+
+
 
 
 

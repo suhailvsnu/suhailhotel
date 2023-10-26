@@ -71,6 +71,8 @@ urlpatterns = [
     path('vierest/',views.viewresthome),
     path('viewofferhome/',views.viewofferhome),
     path('addfooditem/',views.addfooditem),
+    path('viewusermenu/<int:id>',views.viewuserfoodmenu),
+    path('viewmenuitem/<int:id>',views.viewmenuitem),
     
 
     
