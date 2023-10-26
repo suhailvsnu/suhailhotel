@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 from django.http import HttpResponse
 from django.core.files.storage import FileSystemStorage
-from hotelapp.models import tbl_user,tbl_resturant,tbl_accounts,tbl_foodMenu,fooditem,offer
+from hotelapp.models import tbl_user,tbl_resturant,tbl_accounts,tbl_foodMenu,fooditem,offer,tbl_cart,tbl_order
 
 # Create your views here.
 def index(request):
@@ -373,6 +373,51 @@ def viewmenuitem(request,id):
         a=tbl_foodMenu.objects.get(id=id)
         b=fooditem.objects.filter(menuName=a.menuname)
         return render(request,'viewfooditemuser.html',{'data':b})
+def addcart(request,id):
+    a=fooditem.objects.get(id=id)
+    b = request.session['username']
+    
+
+    return render(request,'addtocartform.html',{'data':a,'name':b})
+def addcartform(request):
+    a=tbl_cart()
+    a.username=request.POST.get('username')
+    a.MenuItemName=request.POST.get('mnitem')
+    a.resturantname=request.POST.get('resturantname')
+    a.quantity=request.POST.get('qnty')  
+    a.price=request.POST.get('price')  
+    a.totalamount=int(a.quantity)*int(a.price)      
+    a.save()
+    return redirect('/')
+def viewcart(request):
+     b = request.session['username']
+     c=tbl_cart.objects.filter(username=b)
+     return render(request,'viewcart.html',{'data':c})
+def placeorder(request,id):
+    a=tbl_cart.objects.get(id=id)
+    b = request.session['username']
+    return render(request,'placeorderform.html',{'data':a,'name':b})
+def placeorderform(request):
+    a=tbl_order()
+    b = request.session['username']
+    a.username=b
+    a.resturant_name=request.POST.get('resturantname')
+
+    a.total_price=request.POST.get('tamount')
+    a.payment_mode=request.POST.get('pmode')
+    a.menu_item_name=request.POST.get('mnitem')
+    a.order_date=request.POST.get('date')
+    a.save()
+    return redirect('/viewcart/')
+
+
+
+
+
+
+
+
+    
 
 
 

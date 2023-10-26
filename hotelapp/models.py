@@ -84,9 +84,23 @@ class tbl_cart(models.Model):
     price=models.IntegerField()
     totalamount=models.IntegerField()
     image=models.CharField(max_length=200)
+    status=models.CharField(max_length=200)
 
     class Meta:
         db_table="tbl_cart"
+
+class tbl_order(models.Model):
+    username=models.CharField(max_length=200)
+    resturant_name=models.CharField(max_length=200)
+    total_price=models.IntegerField()
+    payment_mode=models.CharField(max_length=200)
+    menu_item_name=models.CharField(max_length=200)
+    order_date=models.CharField(max_length=200)
+    status=models.CharField(max_length=200)
+
+    class Meta:
+        db_table="tbl_order"
+            
 
 
 

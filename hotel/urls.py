@@ -73,6 +73,13 @@ urlpatterns = [
     path('addfooditem/',views.addfooditem),
     path('viewusermenu/<int:id>',views.viewuserfoodmenu),
     path('viewmenuitem/<int:id>',views.viewmenuitem),
+    path('addcart/<int:id>',views.addcart),
+    path('addcartform/',views.addcartform),
+    path('viewcart/',views.viewcart),
+    path('placeorder/<int:id>',views.placeorder),
+    path('placeorderform/',views.placeorderform),
+
+
     
 
     
